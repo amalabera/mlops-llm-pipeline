@@ -1,7 +1,7 @@
 
 ---
 
-#   `mlops-llm-pipeline/README.md`
+
 
 ```markdown
 # 🤖 MLOps LLM Pipeline
