@@ -1,11 +1,16 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 from transformers import pipeline
 
-app = FastAPI(title="ML Pipeline Demo")
-
+# Load Hugging Face sentiment analysis pipeline
 classifier = pipeline("sentiment-analysis")
 
-@app.get("/predict")
-def predict(text: str):
-    result = classifier(text)
-    return {"input": text, "prediction": result}
+app = FastAPI(title="MLOps LLM Pipeline 🤖")
+
+class TextInput(BaseModel):
+    text: str
+
+@app.post("/predict")
+def predict(input: TextInput):
+    result = classifier(input.text)[0]
+    return {"label": result["label"], "score": result["score"]}
