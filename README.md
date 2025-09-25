@@ -30,3 +30,53 @@ git clone https://github.com/amalabera/mlops-llm-pipeline.git
 cd mlops-llm-pipeline
 pip install -r requirements.txt
 uvicorn app:app --reload
+
+---
+
+## 📦 Getting Started
+
+Clone the repo:
+```bash
+git clone https://github.com/amalabera/mlops-llm-pipeline.git
+cd mlops-llm-pipeline
+```
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Run the API:
+```bash
+uvicorn app:app --reload
+```
+
+---
+
+## 📸 Sample Output (Demo)
+
+POST request:
+```json
+{"text": "I love this project!"}
+```
+
+Response:
+```json
+{"label": "POSITIVE", "score": 0.999}
+```
+
+<img src="assets/llm_pipeline_demo.png" width="600" alt="Demo Screenshot">
+
+---
+
+## 🚀 Future Enhancements
+- Dockerize for production
+- Add multi-language support
+- Integrate monitoring (Prometheus/Grafana)
+- Deploy to AWS/GCP
+
+---
+
+## 📜 License
+MIT License
+
